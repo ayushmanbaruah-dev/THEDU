@@ -26,7 +26,6 @@ ON documents(updated_at);
 def connect(db_path: Path) -> sqlite3.Connection:
     """Open a SQLite connection configured for row-name access."""
     db_path.parent.mkdir(parents=True, exist_ok=True)
-
     connection = sqlite3.connect(db_path)
     connection.row_factory = sqlite3.Row
     return connection
