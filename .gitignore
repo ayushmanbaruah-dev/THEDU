@@ -1,0 +1,24 @@
+# environments / IDE
+.venv/
+.idea/
+*.iml
+
+# python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# typecheck / lint caches
+.mypy_cache/
+.ruff_cache/
+
+# coverage
+.coverage
+htmlcov/
+
+# runtime storage (Phase 1 uses local persistence)
+data/
+artifacts/
+
+# env files
+.env

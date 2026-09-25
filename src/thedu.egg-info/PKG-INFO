@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: thedu
+Version: 0.1.0
+Summary: THEDU — Search without the noise. Phase 1 local lexical search engine foundations.
+Author: Ayushman Baruah
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic>=2.7
+Requires-Dist: pydantic-settings>=2.2
+Provides-Extra: dev
+Requires-Dist: pytest>=8.2; extra == "dev"
+Requires-Dist: pytest-cov>=5.0; extra == "dev"
+Requires-Dist: ruff>=0.6.0; extra == "dev"
+Requires-Dist: mypy>=1.10; extra == "dev"
+Dynamic: license-file
+
+# THEDU
+**Search without the noise.**
+
+THEDU is a lightweight, relevance-first local search engine prototype.
+Phase 1 focuses on a transparent lexical search pipeline using:
+- deterministic tokenization (stopwords optional; OFF by default)
+- SQLite storage for documents (coming next)
+- inverted index + BM25 ranking (coming next)
+- API + CLI + Docker + CI (coming next)
+
+## Dev setup (Windows PowerShell)
+```powershell
+cd A:\THEDU
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev]"
