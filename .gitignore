@@ -22,3 +22,7 @@ artifacts/
 
 # env files
 .env
+# build / packaging metadata (auto-generated)
+*.egg-info/
+src/*.egg-info/
+
