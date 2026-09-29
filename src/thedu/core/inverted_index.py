@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
 from dataclasses import dataclass
+from typing import Iterable
 
 from thedu.core.tokenizer import Tokenizer
 
@@ -64,4 +64,7 @@ class InvertedIndex:
 
     def get_postings(self, term: str) -> list[Posting]:
         bucket = self.postings.get(term, {})
-        return [Posting(document_id=doc_id, term_frequency=bucket[doc_id]) for doc_id in sorted(bucket)]
+        return [
+            Posting(document_id=doc_id, term_frequency=bucket[doc_id])
+            for doc_id in sorted(bucket)
+        ]

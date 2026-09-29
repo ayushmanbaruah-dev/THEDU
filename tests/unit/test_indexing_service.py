@@ -22,8 +22,22 @@ def test_indexing_service_rebuild_creates_artifacts(tmp_path: Path) -> None:
     initialize_database(conn)
     repo = DocumentRepository(conn)
 
-    repo.upsert(Document.create(title="A", content="machine learning", source_type="txt", source_path="a.txt"))
-    repo.upsert(Document.create(title="B", content="cats are animals", source_type="txt", source_path="b.txt"))
+    repo.upsert(
+        Document.create(
+            title="A",
+            content="machine learning",
+            source_type="txt",
+            source_path="a.txt",
+        )
+    )
+    repo.upsert(
+        Document.create(
+            title="B",
+            content="cats are animals",
+            source_type="txt",
+            source_path="b.txt",
+        )
+    )
 
     service = IndexingService(settings, repo)
     meta = service.rebuild()

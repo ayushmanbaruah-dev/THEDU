@@ -47,6 +47,9 @@ class IndexingService:
         index = InvertedIndex()
         index.build(documents, tokenizer=tokenizer)
 
-        meta = IndexMetadata.from_stats(index.stats(), stopwords_enabled=self._settings.stopwords_enabled)
+        meta = IndexMetadata.from_stats(
+            index.stats(),
+            stopwords_enabled=self._settings.stopwords_enabled,
+        )
         self._artifacts.save(index, meta)
         return meta
